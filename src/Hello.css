@@ -1,0 +1,9 @@
+h1 {
+  background: linear-gradient(
+    90deg,
+    rgb(202, 49, 74),
+    rgb(253, 104, 104)
+  );
+  color: rgb(240, 228, 228);
+  text-align: center;
+}
