@@ -2,13 +2,19 @@ import React, { Component } from "react";
 
 import Cards from "./Components/Cards/Cards";
 import Header from "./Components/Header/Header";
-import { robots } from "./robots";
+import Loading from "./Components/Loading/Loading";
 
 class App extends Component {
   state = {
-    robots,
+    robots: [],
     searchValue: ""
   };
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(robots => this.setState({ robots }));
+  }
 
   onSearchChange = e => {
     this.setState({
@@ -24,7 +30,12 @@ class App extends Component {
     return (
       <div className="tc">
         <Header searchChange={this.onSearchChange} />
-        <Cards robots={filteredRobots} />
+        {/* <Cards robots={filteredRobots} /> */}
+        {this.state.robots.length > 0 ? (
+          <Cards robots={filteredRobots} />
+        ) : (
+          <Loading />
+        )}
       </div>
     );
   }
