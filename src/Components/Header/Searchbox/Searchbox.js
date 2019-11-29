@@ -7,7 +7,7 @@ const SearchBox = ({ change }) => (
       type="search"
       name="search"
       placeholder="Search Robots"
-      autocomplete="off"
+      autoComplete="off"
       onChange={change}
     />
   </div>

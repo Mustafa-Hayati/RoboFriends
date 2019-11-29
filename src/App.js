@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Cards from "./Components/Cards/Cards";
 import Header from "./Components/Header/Header";
 import Loading from "./Components/Loading/Loading";
+import Scroll from "./Components/Scroll/Scroll";
 
 class App extends Component {
   state = {
@@ -32,7 +33,9 @@ class App extends Component {
         <Header searchChange={this.onSearchChange} />
         {/* <Cards robots={filteredRobots} /> */}
         {this.state.robots.length > 0 ? (
-          <Cards robots={filteredRobots} />
+          <Scroll>
+            <Cards robots={filteredRobots} />
+          </Scroll>
         ) : (
           <Loading />
         )}
