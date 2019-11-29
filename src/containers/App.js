@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import Cards from "./Components/Cards/Cards";
-import Header from "./Components/Header/Header";
-import Loading from "./Components/Loading/Loading";
-import Scroll from "./Components/Scroll/Scroll";
+import Cards from "../Components/Cards/Cards";
+import Header from "../Components/Header/Header";
+import Loading from "../Components/Loading/Loading";
+import Scroll from "../Components/Scroll/Scroll";
 
 class App extends Component {
   state = {
